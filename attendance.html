@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Take Attendance | AttendEase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav"><a class="logo" href="index.html">AttendEase</a><div><a href="index.html">Home</a><a href="index.html#features">Features</a><a href="attendance.html" aria-current="page">Take attendance</a></div></nav>
+  <header class="top">
+    <h1>Attendance register</h1>
+    <div class="date-box">
+      <label for="date">Date</label>
+      <input type="date" id="date">
+    </div>
+  </header>
+
+  <main>
+    <section class="stats" id="stats" aria-live="polite"></section>
+
+    <section class="panel">
+      <form id="addForm" class="add">
+        <input id="roll" placeholder="Roll no." required maxlength="12">
+        <input id="name" placeholder="Student name" required maxlength="40">
+        <button type="submit" class="btn primary">Add student</button>
+      </form>
+      <p id="formError" class="error" role="alert"></p>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search by name or roll no.">
+        <button id="markAll" class="btn">Mark all present</button>
+        <button id="exportBtn" class="btn">Export CSV</button>
+        <button id="resetBtn" class="btn danger">Clear all data</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Roll no.</th>
+              <th>Name</th>
+              <th>Status on this date</th>
+              <th>Overall</th>
+              <th><span class="sr">Remove</span></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden>No students yet. Add your first student above.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
